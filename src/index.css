@@ -71,3 +71,55 @@
     border: solid black 1px;
     padding: 3px;
 }
+
+.result-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.tile.winner-tile{
+    width: 50px;
+    height: 50px;
+}
+
+.bets-container{
+    display: grid;
+    grid-template-columns: repeat(13, 50px); 
+    grid-template-rows: repeat(2, 50px); 
+    gap: 2px;
+    padding: 10px;
+}
+
+.bet{
+    display: flex;
+    background-color: green;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    grid-column: span 2;
+}
+
+.bet.big{
+    grid-column: span 4;
+}
+
+.red-bet{
+    border: 1px solid white;
+    width: 28px;
+    height: 28px;
+    background-color: red;
+    rotate: 45deg;
+}
+
+.black-bet{
+    border: 1px solid white;
+    width: 28px;
+    height: 28px;
+    background-color: black;
+    rotate: 45deg;
+}

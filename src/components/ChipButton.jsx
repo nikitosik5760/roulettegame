@@ -1,24 +1,29 @@
 import PropTypes from "prop-types"
 
-const ChipButton = ({ chipValue,setBalance,setChipsQnt }) => {
-
+const ChipButton = ({ balance, chipValue,setBalance,setChipsQnt }) => {
   const handleChipPurchase = () => {
+
+    if(balance-chipValue<0) {
+      console.log('not enough money!')
+      return
+    }
+
     setBalance(b=>b-chipValue)
     switch (chipValue){
       case 1:
-        setChipsQnt(qnt=>[qnt[0]+1, qnt[1], qnt[2], qnt[3]])
+        setChipsQnt(chipsQnt=>[{name:chipsQnt[0].name, qnt:chipsQnt[0].qnt+1}, chipsQnt[1], chipsQnt[2], chipsQnt[3]])
         break
       case 5:
-        setChipsQnt(qnt=>[qnt[0], qnt[1]+1, qnt[2], qnt[3]])
+        setChipsQnt(chipsQnt=>[chipsQnt[0], {name:chipsQnt[1].name, qnt:chipsQnt[1].qnt+1}, chipsQnt[2], chipsQnt[3]])
         break
       case 25:
-        setChipsQnt(qnt=>[qnt[0], qnt[1], qnt[2]+1, qnt[3]])
+        setChipsQnt(chipsQnt=>[chipsQnt[0], chipsQnt[1], {name:chipsQnt[2].name, qnt:chipsQnt[2].qnt+1}, chipsQnt[3]])
         break
       case 100:
-        setChipsQnt(qnt=>[qnt[0], qnt[1], qnt[2], qnt[3]+1])
+        setChipsQnt(chipsQnt=>[chipsQnt[0], chipsQnt[1], chipsQnt[2], {name:chipsQnt[3].name, qnt:chipsQnt[3].qnt+1}])
         break  
     }
-    setChipsQnt(qnt=>qnt) // TODO make this work
+    setChipsQnt(qnt=>qnt)
   }
 
   return (
@@ -32,6 +37,7 @@ ChipButton.propTypes = {
   chipValue: PropTypes.number.isRequired,
   setBalance: PropTypes.func.isRequired,
   setChipsQnt: PropTypes.func.isRequired,
+  balance: PropTypes.number.isRequired
 }
 
 export default ChipButton
