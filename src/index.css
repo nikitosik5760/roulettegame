@@ -1,78 +1,79 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-.app{
+.app {
     display: flex;
     flex-direction: column;
     padding: 5px;
 }
 
-.tile{
+.tile {
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
+    cursor: pointer;
 }
 
-.tile.zero{
+.tile.zero {
     grid-row: span 3;
 }
 
-.tile-container{
+.tile-container {
     display: grid;
-    grid-template-columns: repeat(13, 50px); 
-    grid-template-rows: repeat(3, 50px); 
+    grid-template-columns: repeat(13, 50px);
+    grid-template-rows: repeat(3, 50px);
     gap: 2px;
     grid-auto-flow: column;
     padding: 3px;
 }
 
-.all-chips-container{
+.all-chips-container {
     display: flex;
     flex-direction: row;
 }
 
-.chip-container{
+.chip-container {
     display: flex;
     flex-direction: column;
     padding: 1px;
     gap: 3px;
 }
 
-.chip{
+.chip {
     width: 30px;
     height: 10px;
 }
 
-.chip.one{
+.chip.one {
     background-color: grey;
 }
 
-.chip.five{
+.chip.five {
     background-color: red;
 }
 
-.chip.twentyfive{
+.chip.twentyfive {
     background-color: blue;
 }
 
-.chip.hundred{
+.chip.hundred {
     background-color: blueviolet;
 }
 
-.select-chips-container{
+.select-chips-container {
     display: flex;
     flex-direction: row;
 }
 
-.balance-display{
+.balance-display {
     background-color: rgb(57, 232, 41);
     border: solid black 1px;
     padding: 3px;
 }
 
-.result-container{
+.result-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,20 +82,20 @@
     padding: 10px;
 }
 
-.tile.winner-tile{
+.tile.winner-tile {
     width: 50px;
     height: 50px;
 }
 
-.bets-container{
+.bets-container {
     display: grid;
-    grid-template-columns: repeat(13, 50px); 
-    grid-template-rows: repeat(2, 50px); 
+    grid-template-columns: repeat(13, 50px);
+    grid-template-rows: repeat(2, 50px);
     gap: 2px;
     padding: 10px;
 }
 
-.bet{
+.bet {
     display: flex;
     background-color: green;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -102,13 +103,14 @@
     justify-content: center;
     align-items: center;
     grid-column: span 2;
+    cursor: pointer;
 }
 
-.bet.big{
+.bet.big {
     grid-column: span 4;
 }
 
-.red-bet{
+.red-bet {
     border: 1px solid white;
     width: 28px;
     height: 28px;
@@ -116,7 +118,7 @@
     rotate: 45deg;
 }
 
-.black-bet{
+.black-bet {
     border: 1px solid white;
     width: 28px;
     height: 28px;
